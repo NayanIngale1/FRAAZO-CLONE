@@ -11,8 +11,8 @@ const app = express();
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
 
-const passport = require("./configs/googleOauth");
-
+const passport = require("./configs/googleOauth") ;
+  
 app.use(cors());
 app.use(express.json());
 
