@@ -82,10 +82,12 @@ app.post(
   body("password").not().isEmpty().withMessage("Password is required"),
   login
 );
-app.get(
-  "/auth/google",
-  passport.authenticate("google", { scope: ["profile", "email"] })
-);
+
+
+// app.get(
+//   "/auth/google",
+//   passport.authenticate("google", { scope: ["profile", "email"] })
+// );
 
 
 
