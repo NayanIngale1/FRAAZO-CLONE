@@ -120,8 +120,11 @@ app.post(
 //   }
 // );
 
+
 app.use("/", (req, res) => {
-  res.send("<h1>Wlcome to Fraazo API</h1>");
+  res.send(
+    `<h1 style="color:#C7AA8D;font-size:46px;margin:20px auto;">Welcome to Fraazo-CLone API</h1>`
+  );
 });
 
 module.exports = app;
