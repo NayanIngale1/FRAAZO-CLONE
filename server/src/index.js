@@ -11,17 +11,20 @@ const app = express();
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
 
-const passport = require("./configs/googleOauth") ;
-  
+const passport = require("./configs/googleOauth");
+
 app.use(cors());
 app.use(express.json());
 
 const fraazoController = require("./controllers/fraazo.controller");
 
+const paymentController = require("./controllers/payment.controller");
+
 const userController = require("./controllers/user.controller");
 
 app.use("/fraazo", fraazoController);
 app.use("/user", userController);
+app.use("/payment", paymentController);
 
 app.post(
   "/register",
@@ -95,8 +98,10 @@ app.get(
 
     // return res.status(200).send({ token: token, user: req.user });
     // Successful authentication, redirect home.
-
-    res.redirect(`/google-oauth2success?token=${token}&nickName=${user.nickName}&profileImage=${user.profileImage}`);
+    const user = req.user;
+    res.redirect(
+      `/google-oauth2success?token=${token}&firstName=${user.firstName}&lastName=${user.lastName}&email=${user.email}&id=${user.id}`
+    );
   }
 );
 
