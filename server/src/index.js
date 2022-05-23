@@ -11,7 +11,7 @@ const app = express();
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
 
-const passport = require("./configs/googleOauth");
+// const passport = require("./configs/googleOauth");
 
 app.use(cors());
 app.use(express.json());
@@ -87,23 +87,36 @@ app.get(
   passport.authenticate("google", { scope: ["profile", "email"] })
 );
 
-app.get(
-  "/auth/google/callback",
-  passport.authenticate("google", {
-    failureRedirect: "/login",
-    session: false,
-  }),
-  function (req, res) {
-    const token = generateToken(req.user);
 
-    // return res.status(200).send({ token: token, user: req.user });
-    // Successful authentication, redirect home.
-    const user = req.user;
-    res.redirect(
-      `/google-oauth2success?token=${token}&firstName=${user.firstName}&lastName=${user.lastName}&email=${user.email}&id=${user.id}`
-    );
-  }
-);
+
+// //google oauth
+// passport.serializeUser(function(user, done){
+//     done(null, user);
+// })
+
+// passport.deserializeUser(function(user, done){
+//     done(null, user);
+// })
+
+
+
+// app.get(
+//   "/auth/google/callback",
+//   passport.authenticate("google", {
+//     failureRedirect: "/login",
+//     session: false,
+//   }),
+//   function (req, res) {
+//     const token = generateToken(req.user);
+
+//     // return res.status(200).send({ token: token, user: req.user });
+//     // Successful authentication, redirect home.
+//     const user = req.user;
+//     res.redirect(
+//       `/google-oauth2success?token=${token}&firstName=${user.firstName}&lastName=${user.lastName}&email=${user.email}&id=${user.id}`
+//     );
+//   }
+// );
 
 app.use("/", (req, res) => {
   res.send("<h1>Wlcome to Fraazo API</h1>");

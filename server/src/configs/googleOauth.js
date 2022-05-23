@@ -1,5 +1,7 @@
+/*
+
 require("dotenv").config();
-const User = require("../models/Users.model");
+const User = require("../models/user.model");
 var GoogleStrategy = require("passport-google-oauth2").Strategy;
 const passport = require("passport");
 const { v4 } = require("uuid");
@@ -9,8 +11,7 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL:
-        "http://localhost:4000/auth/google/callback",
+      callbackURL: "http://localhost:4000/auth/google/callback",
     },
     async function (request, accessToken, refreshToken, profile, done) {
       let user = await User.findOne({ email: profile?.email }).lean().exec();
@@ -30,3 +31,5 @@ passport.use(
 );
 
 module.exports = passport;
+
+*/
