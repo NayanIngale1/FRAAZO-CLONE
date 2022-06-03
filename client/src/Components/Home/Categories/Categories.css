@@ -1,0 +1,25 @@
+.category_section {
+  margin-top: 30px;
+}
+.category_section .category_heading {
+  margin: 0px 10px;
+}
+.category_section .view_all {
+  font-size: 16px;
+  color: red;
+}
+.category_slider {
+  border-top: 1px solid #f0f0f0;
+  margin-top: 10px;
+  padding: 10px 0px;
+}
+.category_slider .slick-next:before,
+.category_slider .slick-prev:before {
+  color: black;
+}
+.category_slider .slick-prev {
+  left: -10px;
+}
+.category_slider .slick-next {
+  right: -15px;
+}

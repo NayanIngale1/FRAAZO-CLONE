@@ -1,0 +1,15 @@
+.product_categories {
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.product_categories_imgDiv {
+  width: 300px;
+  cursor: pointer;
+}
+.product_category_img {
+  width: 100%;
+}
