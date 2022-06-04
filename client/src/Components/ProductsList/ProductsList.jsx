@@ -17,6 +17,7 @@ const ProductsList = () => {
 
   useEffect(() => {
     setProdData(data.filter((e) => e.sub_category == subcategory));
+    window.scroll(0, 0);
   }, [subcategory]);
 
   return (

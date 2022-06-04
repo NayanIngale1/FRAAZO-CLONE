@@ -2,6 +2,7 @@ import React from "react";
 import "./ProductCard.css";
 import { FaCartPlus } from "react-icons/fa";
 import { BiRupee } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ prod }) => {
   // const prod = {
@@ -12,8 +13,8 @@ const ProductCard = ({ prod }) => {
   //   weight: "1 kg",
   //   prize: 16,
   //   old_prize: 19,
-  //   category: " Vegetables",
-  //   sub_category: " Onion, Potato & Tomatoes",
+  //   category: "Vegetables",
+  //   sub_category: "Onion, Potato & Tomatoes",
   //   description: "Onion",
   //   benifit:
   //     "- Onions are low in fat and calories, but rich in soluble dietary fibers. - The chemicals in onions are good for helping with swelling, lowering cholesterol and blood sugars. - Onions are rich in antioxidants which helps in lowering the risk of several types of cancer. - The fibre in onion helps in improving the gut health & managing the blood pressure. - Onion Nutritions also include Vitamin B6, C & other compounds which help in improving skin & hair.",
@@ -25,7 +26,9 @@ const ProductCard = ({ prod }) => {
   return (
     <div className="product_card">
       <div className="product_imgDiv">
-        <img src={prod.image} alt="" className="product_img" />
+        <Link to={`/products/${prod._id}`} style={{ textDecoration: "none" }}>
+          <img src={prod.image} alt="" className="product_img" />
+        </Link>
       </div>
       <div className="product_infoDiv">
         <div className="product_name">{prod.name}</div>

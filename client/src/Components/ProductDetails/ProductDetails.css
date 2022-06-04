@@ -37,6 +37,9 @@
   align-items: center;
   font-weight: 700;
 }
+.product_details_price_section {
+  gap: 15px;
+}
 
 .product_original_prize {
   color: rgb(255, 30, 0);
@@ -63,13 +66,13 @@
   border-top: 1px solid lightgray;
   border-bottom: 1px solid lightgray;
 }
-.detail_tab{   
+.detail_tab {
   padding: 10px 0px;
 }
 .detail_tab.active {
   color: black;
   font-weight: bold;
-  border-bottom:3px solid green;
+  border-bottom: 3px solid green;
 }
 .product_details_tab_details {
   padding: 10px;

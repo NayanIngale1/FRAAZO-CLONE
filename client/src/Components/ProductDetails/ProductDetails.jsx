@@ -12,7 +12,8 @@ const ProductDetails = () => {
     fetch(`https://fraazo-clone.herokuapp.com/fraazo/${id}`)
       .then((res) => res.json())
       .then((res) => setProduct(res));
-  }, []);
+    window.scrollTo(0, 0);
+  }, [id]);
 
   const [show, setShow] = useState({
     des: true,
