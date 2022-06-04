@@ -1,5 +1,8 @@
-.App .app_container {
+.app_container {
   width: 95%;
   margin: auto;
   margin-top: 20px;
+}
+.home_section {
+  width: 100%;
 }

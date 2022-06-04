@@ -3,6 +3,7 @@
   /* width: 500px; */
   margin: 10px 15px;
   display: flex;
+  min-height: 350px;
   flex-direction: column;
   border: 1px solid #f0f0f0;
   border-radius: 10px;
@@ -30,6 +31,8 @@
 .product_more_info {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
   justify-content: space-between;
 }
 .product_weight {
@@ -47,6 +50,9 @@
   display: flex;
   align-items: center;
   text-decoration: line-through;
+}
+.add_cart_buttonDiv {
+  margin-top: auto;
 }
 .add_cart_btn {
   padding: 10px 20px;

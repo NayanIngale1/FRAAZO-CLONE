@@ -7,8 +7,8 @@ export const data = [
     weight: "1 kg",
     prize: 16,
     old_prize: 19,
-    category: " Vegetables",
-    sub_category: " Onion, Potato & Tomatoes",
+    category: "Vegetables",
+    sub_category: "Onion, Potato & Tomatoes",
     description: "Onion",
     benifit:
       "- Onions are low in fat and calories, but rich in soluble dietary fibers. - The chemicals in onions are good for helping with swelling, lowering cholesterol and blood sugars. - Onions are rich in antioxidants which helps in lowering the risk of several types of cancer. - The fibre in onion helps in improving the gut health & managing the blood pressure. - Onion Nutritions also include Vitamin B6, C & other compounds which help in improving skin & hair.",
@@ -149,7 +149,7 @@ export const data = [
     prize: 18,
     old_prize: null,
     category: " Vegetables",
-    sub_category: " Daily Veggies",
+    sub_category: "Daily Veggies",
     description: "Capsicum (Shimla), Green Shimla Mirchi",
     benifit:
       "- Capsicum helps you burn fat and lose weight. The capsicum veggie also improves digestion. - Capsicum lowers the risk of cancer as it contains anti-inflammatory nutrients and antioxidants. - Capsicum includes a chemical called capsaicin, which is thought to prevent pain from reaching the spinal cord. It is beneficial in the treatment of herpes zoster and neuralgia pain. It helps to alleviate discomfort.",

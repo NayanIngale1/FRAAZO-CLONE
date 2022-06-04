@@ -1,21 +1,43 @@
 import React from "react";
 import "./App.css";
-import Banner from "./Components/Home/Banners/Banner";
-import BestDeals from "./Components/Home/BestDeals/BestDeals";
-import Mangoes from "./Components/Home/Categories/Mangoes";
-import ProductCategories from "./Components/Home/ProductCategory/ProductCategories";
+import { Routes, Route } from "react-router-dom";
+import Footer from "./Components/Footer/Footer";
+import Home from "./Components/Home/Home";
 import Navbar from "./Components/Navbar/Navbar";
+import ProductsList from "./Components/ProductsList/ProductsList";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <div className="app_container">
-        <Banner />
-        <BestDeals />
-        <ProductCategories />
-        <Mangoes />
-      </div>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+
+        <Route
+          path="/products/mangoes/:subcategory"
+          element={<ProductsList />}
+        />
+        <Route
+          path="/products/vegetables/:subcategory"
+          element={<ProductsList />}
+        />
+        <Route
+          path="/products/fruits/:subcategory"
+          element={<ProductsList />}
+        />
+        <Route path="/products/herbs/:subcategory" element={<ProductsList />} />
+        <Route
+          path="/products/dryfruits/:subcategory"
+          element={<ProductsList />}
+        />
+        <Route
+          path="/products/kitchenstapels/:subcategory"
+          element={<ProductsList />}
+        />
+      </Routes>
+
+      <Footer />
     </div>
   );
 }
