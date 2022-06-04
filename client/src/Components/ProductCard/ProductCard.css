@@ -56,12 +56,13 @@
 }
 .add_cart_btn {
   padding: 10px 20px;
-  color: green;
+  color: #4fbb90;
   display: flex;
   align-items: center;
   gap: 8px;
   background-color: white;
-  border: 1px solid green;
+  border: 1px solid #4fbb90;
   border-radius: 20px;
   outline: none;
+  transition: all 0.3s ease-in-out;
 }

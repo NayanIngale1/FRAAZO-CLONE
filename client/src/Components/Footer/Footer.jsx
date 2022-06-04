@@ -19,7 +19,7 @@ const Footer = () => {
           <div className="footer_list_item">
             <div className="footer_list_first">
               <img src={footerLogo} alt="" className="footer_logo_white" />
-              <p classname="footer_logo_info">
+              <p className="footer_logo_info">
                 Order online vegetables & fruits directly from the farm. Fraazo
                 is online platform that allows customer to get farm fresh
                 produce directly from farmers.

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
 import navbarLogo from "../../Images/fraazo-logo.svg";
 import { MdLocationOn, MdPerson } from "react-icons/md";
@@ -6,8 +6,10 @@ import { MdLocationOn, MdPerson } from "react-icons/md";
 import { IoIosWallet } from "react-icons/io";
 import { HiShoppingCart } from "react-icons/hi";
 import { FaSearch } from "react-icons/fa";
+import Cart from "../Cart/Cart";
 
 const Navbar = () => {
+  const [openCart, setOpenCart] = useState(false);
   return (
     <div className="navbar_wrapper">
       <div className="navbar_logo">
@@ -24,7 +26,7 @@ const Navbar = () => {
         />
         <FaSearch className="navbar_search-icon" />
       </div>
-      <div className="navbar_cart">
+      <div className="navbar_cart" onClick={() => setOpenCart(true)}>
         <HiShoppingCart className="navbar_icon" />
         Cart
       </div>
@@ -36,6 +38,7 @@ const Navbar = () => {
         <MdPerson className="navbar_icon" />
         Login
       </div>
+      <Cart openCart={openCart} setOpenCart={setOpenCart} />
     </div>
   );
 };

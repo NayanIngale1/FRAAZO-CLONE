@@ -5,6 +5,7 @@ import Footer from "./Components/Footer/Footer";
 import Home from "./Components/Home/Home";
 import Navbar from "./Components/Navbar/Navbar";
 import ProductsList from "./Components/ProductsList/ProductsList";
+import ProductDetails from "./Components/ProductDetails/ProductDetails";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           path="/products/kitchenstapels/:subcategory"
           element={<ProductsList />}
         />
+        <Route path="/products/:id" element={<ProductDetails />} />
       </Routes>
 
       <Footer />
