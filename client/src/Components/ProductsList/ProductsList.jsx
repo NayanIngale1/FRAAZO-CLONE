@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ProductsList.css";
+import { data } from "../../data";
 import { useParams, Link } from "react-router-dom";
+import ProductCard from "../ProductCard/ProductCard";
 
 const ProductsList = () => {
   const { subcategory } = useParams();
+  const [prodData, setProdData] = useState([]);
 
   const [openMangoes, setOpenMangoes] = useState(false);
   const [openVegetables, setOpenVegetables] = useState(false);
@@ -11,6 +14,10 @@ const ProductsList = () => {
   const [openHerbs, setOpenHerbs] = useState(false);
   const [openDryFruits, setOpenDryFruits] = useState(false);
   const [openKitchenStaples, setOpenKitchenStaples] = useState(false);
+
+  useEffect(() => {
+    setProdData(data.filter((e) => e.sub_category == subcategory));
+  }, [subcategory]);
 
   return (
     <div className="app_container">
@@ -31,7 +38,9 @@ const ProductsList = () => {
                 {openMangoes && (
                   <>
                     <Link to="/products/mangoes/mangoes" className="linkTag">
-                      <div className="prod_accordion-content"> Mangoes</div>
+                      <div className="prod_accordion-content">
+                        {">"} {"   "}Mangoes
+                      </div>
                     </Link>
                   </>
                 )}
@@ -51,7 +60,7 @@ const ProductsList = () => {
                       className="linkTag"
                     >
                       <div className="prod_accordion-content">
-                        Apples, Pears, Plums
+                        {">"} {"   "}Apples, Pears, Plums
                       </div>
                     </Link>
                     <Link
@@ -59,7 +68,7 @@ const ProductsList = () => {
                       className="linkTag"
                     >
                       <div className="prod_accordion-content">
-                        Oranges, Mosambi & Melons
+                        {">"} {"   "} Oranges, Mosambi & Melons
                       </div>
                     </Link>
                     <Link
@@ -67,7 +76,7 @@ const ProductsList = () => {
                       className="linkTag"
                     >
                       <div className="prod_accordion-content">
-                        Papaya, Pineapple, Pomegranate
+                        {">"} {"   "} Papaya, Pineapple, Pomegranate
                       </div>
                     </Link>
                     <Link
@@ -75,7 +84,7 @@ const ProductsList = () => {
                       className="linkTag"
                     >
                       <div className="prod_accordion-content">
-                        Grapes, Banana, Guava & Sapota
+                        {">"} {"   "} Grapes, Banana, Guava & Sapota
                       </div>
                     </Link>
                     <Link
@@ -83,14 +92,17 @@ const ProductsList = () => {
                       className="linkTag"
                     >
                       <div className="prod_accordion-content">
-                        Exotic Fruits
+                        {">"} {"   "} Exotic Fruits
                       </div>
                     </Link>
                     <Link
                       to="/products/fruits/fruit-combos"
                       className="linkTag"
                     >
-                      <div className="prod_accordion-content">Fruit Combos</div>
+                      <div className="prod_accordion-content">
+                        {" "}
+                        {">"} {"   "}Fruit Combos
+                      </div>
                     </Link>
                   </>
                 )}
@@ -110,7 +122,7 @@ const ProductsList = () => {
                       className="linkTag"
                     >
                       <div className="prod_accordion-content">
-                        Daily Veggies
+                        {">"} {"   "} Daily Veggies
                       </div>
                     </Link>
                     <Link
@@ -118,7 +130,7 @@ const ProductsList = () => {
                       className="linkTag"
                     >
                       <div className="prod_accordion-content">
-                        Onion, Potato & Tomatoes
+                        {">"} {"   "} Onion, Potato & Tomatoes
                       </div>
                     </Link>
                     <Link
@@ -126,7 +138,7 @@ const ProductsList = () => {
                       className="linkTag"
                     >
                       <div className="prod_accordion-content">
-                        Root Vegetable
+                        {">"} {"   "} Root Vegetable
                       </div>
                     </Link>
                     <Link
@@ -134,7 +146,7 @@ const ProductsList = () => {
                       className="linkTag"
                     >
                       <div className="prod_accordion-content">
-                        Exotic Vegetables
+                        {">"} {"   "} Exotic Vegetables
                       </div>
                     </Link>
                     <Link
@@ -142,7 +154,7 @@ const ProductsList = () => {
                       className="linkTag"
                     >
                       <div className="prod_accordion-content">
-                        Vegetable Combos
+                        {">"} {"   "} Vegetable Combos
                       </div>
                     </Link>
                     <Link
@@ -150,7 +162,7 @@ const ProductsList = () => {
                       className="linkTag"
                     >
                       <div className="prod_accordion-content">
-                        Cuts, Peeled & Sprouts
+                        {">"} {"   "} Cuts, Peeled & Sprouts
                       </div>
                     </Link>
                   </>
@@ -171,7 +183,7 @@ const ProductsList = () => {
                       className="linkTag"
                     >
                       <div className="prod_accordion-content">
-                        Herbs & Leafy Products
+                        {">"} {"   "} Herbs & Leafy Products
                       </div>
                     </Link>
                   </>
@@ -192,7 +204,7 @@ const ProductsList = () => {
                       className="linkTag"
                     >
                       <div className="prod_accordion-content">
-                        Premium Quality Dry Fruits
+                        {">"} {"   "} Premium Quality Dry Fruits
                       </div>
                     </Link>
                   </>
@@ -213,7 +225,7 @@ const ProductsList = () => {
                       className="linkTag"
                     >
                       <div className="prod_accordion-content">
-                        Dals & Pulses
+                        {">"} {"   "} Dals & Pulses
                       </div>
                     </Link>
                     <Link
@@ -221,7 +233,7 @@ const ProductsList = () => {
                       className="linkTag"
                     >
                       <div className="prod_accordion-content">
-                        Atta, Flour and Sooji
+                        {">"} {"   "} Atta, Flour and Sooji
                       </div>
                     </Link>
                     <Link
@@ -229,7 +241,7 @@ const ProductsList = () => {
                       className="linkTag"
                     >
                       <div className="prod_accordion-content">
-                        Rice and Rice Products
+                        {">"} {"   "} Rice and Rice Products
                       </div>
                     </Link>
                   </>
@@ -239,7 +251,16 @@ const ProductsList = () => {
           </div>
         </div>
 
-        <h1>{subcategory}</h1>
+        <div className="products_listing_products">
+          <div className="products_listing_path">
+            Home/<b>{subcategory}</b>
+          </div>
+          <div className="products_list">
+            {prodData.map((ele) => (
+              <ProductCard prod={ele} />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
