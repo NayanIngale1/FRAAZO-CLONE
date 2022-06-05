@@ -5,28 +5,6 @@ import { Drawer, Button } from "@mui/material";
 import { BiRupee } from "react-icons/bi";
 
 export default function Cart({ openCart, setOpenCart }) {
-  const toggleDrawer = (open) => (event) => {
-    if (
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
-      return;
-    }
-
-    setOpenCart(open);
-  };
-
-  const [cartTotal, setCartTotal] = useState(0);
- 
-
-  useEffect(() => {
-    let res = 0;
-    for (let i = 0; i < cartItems.length; i++) {
-      res += cartItems[i].prize * cartItems[i].cart;
-    }
-    setCartTotal(res);
-  }, [cartItems]);
-
   const [cartItems, setCartItems] = useState([
     {
       _id: "628a99db488855a1a7167082",
@@ -66,6 +44,29 @@ export default function Cart({ openCart, setOpenCart }) {
       updatedAt: "2022-05-22T20:16:34.724Z",
     },
   ]);
+  
+  const toggleDrawer = (open) => (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+
+    setOpenCart(open);
+  };
+
+  const [cartTotal, setCartTotal] = useState(0);
+ 
+
+  useEffect(() => {
+    let res = 0;
+    for (let i = 0; i < cartItems.length; i++) {
+      res += cartItems[i].prize * cartItems[i].cart;
+    }
+    setCartTotal(res);
+  }, [cartItems]);
+
 
 
   const list = () => (

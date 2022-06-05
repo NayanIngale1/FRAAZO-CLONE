@@ -33,21 +33,22 @@
   border-bottom: 1px solid rgb(180, 180, 180);
   padding: 15px;
   gap: 15px;
+  font-size: 20px;
   align-items: center;
   cursor: pointer;
 }
 .prod_accordion-title > div:first-child {
   color: green;
-  font-size: 20px;
+  font-size: 25px;
 }
 .prod_accordion-title > div {
   font-weight: 900;
 }
 
 .prod_accordion-content {
-  padding: 10px;
+  padding: 15px;
   /* border-top: 1px solid gray; */
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.1;
   max-height: 300px;
   overflow-y: scroll;
@@ -89,7 +90,7 @@
 
 .products_list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 15px;
   /* border: 1px solid black; */
 }

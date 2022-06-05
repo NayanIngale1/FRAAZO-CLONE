@@ -6,3 +6,7 @@
 .home_section {
   width: 100%;
 }
+.linkTag {
+  text-decoration: none;
+  color: inherit;
+}

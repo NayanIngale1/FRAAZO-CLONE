@@ -3,11 +3,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 30px;
   flex-wrap: wrap;
 }
 .product_categories_imgDiv {
-  width: 300px;
+  width: 400px;
   cursor: pointer;
 }
 .product_category_img {

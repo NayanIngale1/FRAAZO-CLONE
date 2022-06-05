@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Navbar.css";
 import navbarLogo from "../../Images/fraazo-logo.svg";
 import { MdLocationOn, MdPerson } from "react-icons/md";
-
+import { Link } from "react-router-dom";
 import { IoIosWallet } from "react-icons/io";
 import { HiShoppingCart } from "react-icons/hi";
 import { FaSearch } from "react-icons/fa";
@@ -12,9 +12,11 @@ const Navbar = () => {
   const [openCart, setOpenCart] = useState(false);
   return (
     <div className="navbar_wrapper">
-      <div className="navbar_logo">
-        <img src={navbarLogo} alt="" className="navbar_logo_img" />
-      </div>
+      <Link to="/" className="linkTag">
+        <div className="navbar_logo">
+          <img src={navbarLogo} alt="" className="navbar_logo_img" />
+        </div>
+      </Link>
       <div className="navbar_location_wrapper">
         <MdLocationOn />
         Pune

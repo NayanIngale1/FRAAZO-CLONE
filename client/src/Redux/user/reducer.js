@@ -1,3 +1,4 @@
+import { LOGIN_LODING, LOGIN_ERROR, ADD_USER_DATA } from "./action.js";
 const initial = {
   loading: false,
   error: false,
@@ -12,8 +13,7 @@ export const userReducer = (state = initial, { type, payload }) => {
       return { ...state, loading: false, error: payload };
     case ADD_USER_DATA:
       return { ...state, loading: false, user: payload };
-    case defaults:
+    default:
       return state;
   }
 };
-

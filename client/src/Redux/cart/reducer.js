@@ -1,4 +1,3 @@
-import { store } from "../store";
 import {
   ADD_TO_CART,
   CART_LOADING,
@@ -18,7 +17,7 @@ export const cartReducer = (state = initial, { type, payload }) => {
     case ADD_TO_CART:
       return { ...state, cartItems: [...state.cartItems, payload] };
     case INC_CART_PROD:
-      const data = state.cartItems.map((el) =>
+      let data = state.cartItems.map((el) =>
         el._id === payload._id
           ? el.cart !== undefined
             ? (el.cart = el.cart + 1)
@@ -40,7 +39,7 @@ export const cartReducer = (state = initial, { type, payload }) => {
         }
       });
       return { ...state, cartItems: data };
-    case defaults:
+    default:
       return state;
   }
 };

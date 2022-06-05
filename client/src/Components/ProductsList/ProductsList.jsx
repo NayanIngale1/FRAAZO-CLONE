@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./ProductsList.css";
-import { data } from "../../data";
 import { useParams, Link } from "react-router-dom";
 import ProductCard from "../ProductCard/ProductCard";
+import { useDispatch, useSelector } from "react-redux";
 
 const ProductsList = () => {
   const { subcategory } = useParams();
+
+  const data = useSelector((state) => state.product.data);
   const [prodData, setProdData] = useState([]);
 
   const [openMangoes, setOpenMangoes] = useState(false);
@@ -15,10 +17,18 @@ const ProductsList = () => {
   const [openDryFruits, setOpenDryFruits] = useState(false);
   const [openKitchenStaples, setOpenKitchenStaples] = useState(false);
 
+  const dispatch = useDispatch();
+ 
   useEffect(() => {
-    setProdData(data.filter((e) => e.sub_category == subcategory));
+    fiterCategory();
     window.scroll(0, 0);
   }, [subcategory]);
+
+  function fiterCategory() {
+    const filterData = data.filter((el) => el.sub_category == subcategory);
+
+    setProdData(filterData);
+  }
 
   return (
     <div className="app_container">

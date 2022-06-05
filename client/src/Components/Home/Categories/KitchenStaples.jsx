@@ -4,13 +4,16 @@ import Slider from "react-slick";
 import { settings } from "../CommonSlider";
 import { data } from "../../../data";
 import ProductCard from "../../ProductCard/ProductCard";
+import { Link } from "react-router-dom";
 
 const KitchenStaples = () => {
   return (
     <div className="category_section">
-      <h2 className="category_heading">
-        KITCHEN STAPLES <span className="view_all">( View All )</span>
-      </h2>
+      <Link to="/products/kitchenstapels/dals-pulses" className="linkTag">
+        <h2 className="category_heading">
+          KITCHEN STAPLES <span className="view_all">( View All )</span>
+        </h2>
+      </Link>
       <div className="category_slider">
         <Slider {...settings}>
           {data.map((ele) => (

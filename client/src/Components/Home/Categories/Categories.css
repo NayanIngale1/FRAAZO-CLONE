@@ -17,9 +17,3 @@
 .category_slider .slick-prev:before {
   color: black;
 }
-.category_slider .slick-prev {
-  left: -10px;
-}
-.category_slider .slick-next {
-  right: -15px;
-}
