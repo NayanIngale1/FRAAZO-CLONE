@@ -12,11 +12,11 @@ const Navbar = () => {
   const [openCart, setOpenCart] = useState(false);
   return (
     <div className="navbar_wrapper">
-      <Link to="/" className="linkTag">
-        <div className="navbar_logo">
+      <div className="navbar_logo">
+        <Link to="/" className="linkTag">
           <img src={navbarLogo} alt="" className="navbar_logo_img" />
-        </div>
-      </Link>
+        </Link>
+      </div>
       <div className="navbar_location_wrapper">
         <MdLocationOn />
         Pune

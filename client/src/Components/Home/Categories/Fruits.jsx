@@ -2,11 +2,15 @@ import React from "react";
 import "./Categories.css";
 import Slider from "react-slick";
 import { settings } from "../CommonSlider";
-import { data } from "../../../data";
 import ProductCard from "../../ProductCard/ProductCard";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
 
 const Fruits = () => {
+   const data = useSelector((state) =>
+     state.product.data.filter((el) => el.category === "Fruits")
+   );
   return (
     <div className="category_section">
       <Link to="/products/fruits/apples-pears-plums" className="linkTag">
