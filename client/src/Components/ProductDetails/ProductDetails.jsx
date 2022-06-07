@@ -4,6 +4,7 @@ import { FaCartPlus } from "react-icons/fa";
 import { BiRupee } from "react-icons/bi";
 import { useParams } from "react-router-dom";
 import BestDeals from "../Home/BestDeals/BestDeals";
+import AddToCartBtn from "../AddToCart Button/AddToCartBtn";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -44,10 +45,11 @@ const ProductDetails = () => {
               </div>
             </div>
             <div className="add_cart_buttonDiv">
-              <button className="add_cart_btn">
+              {/* <button className="add_cart_btn">
                 <FaCartPlus />
                 ADD
-              </button>
+              </button> */}
+               <AddToCartBtn prod={product} />
             </div>
             <div className="product_details_tabs">
               <div className="details_tabs">

@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 const Fruits = () => {
    const data = useSelector((state) =>
-     state.product.data.filter((el) => el.category === "Fruits")
+     state.product.data.filter((el) => el.category.trim() === "Fruits")
    );
   return (
     <div className="category_section">

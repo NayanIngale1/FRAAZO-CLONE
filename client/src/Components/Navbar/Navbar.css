@@ -7,7 +7,6 @@
   align-items: center;
   /* border: 1px solid red; */
   color: #999;
-  font-size: 20px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .navbar_logo {
@@ -24,10 +23,10 @@
 .navbar_search_bar {
   /* max-width: 40%; */
   min-width: 45%;
+  padding: 0;
   border: 1px solid rgba(153, 153, 153, 0.502);
   border-radius: 50px;
   display: flex;
-  font-size: 20px;
   justify-content: space-between;
   align-items: center;
   padding: 15px;
@@ -37,12 +36,11 @@
   width: 100%;
   color: #999;
   border: 0;
-  font-size: 20px;
   outline: none;
   font-family: inherit;
 }
 .navbar_icon {
-  font-size: 30px;
+  font-size: 25px;
 }
 .navbar_cart,
 .navbar_credit,

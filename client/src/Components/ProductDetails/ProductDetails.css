@@ -3,7 +3,7 @@
 }
 .product_details_infoDiv {
   display: flex;
-  margin: 40px auto;
+  margin: 20px auto;
   justify-content: space-around;
   gap: 40px;
 }
@@ -13,7 +13,7 @@
   text-align: center;
 }
 .product_img {
-  width: 420px;
+  width: 350px;
 }
 .product_details_info {
   /* border: 1px solid red; */

@@ -3,48 +3,14 @@ import "./Cart.css";
 import Box from "@mui/material/Box";
 import { Drawer, Button } from "@mui/material";
 import { BiRupee } from "react-icons/bi";
+import { useDispatch, useSelector } from "react-redux";
+import { descCartProd, incCartProd } from "../../Redux/cart/action";
 
 export default function Cart({ openCart, setOpenCart }) {
-  const [cartItems, setCartItems] = useState([
-    {
-      _id: "628a99db488855a1a7167082",
-      name: "Special Offer Watermelon",
-      image:
-        "https://s3.ap-south-1.amazonaws.com/fraazo-prod/images/images/000/004/598/original/data?1647718256",
-      weight: "1 pc",
-      prize: 9,
-      old_prize: 26,
-      category: "fruits",
-      sub_category: "oranges-mosambi-melons",
-      description: "Special Offer Watermelon",
-      benifit: "No Details Available",
-      info: "No Details Available",
-      tag: "best",
-      cart: 1,
-      createdAt: "2022-05-22T20:15:23.160Z",
-      updatedAt: "2022-05-22T20:15:23.160Z",
-    },
-    {
-      _id: "628a9a22488855a1a7167084",
-      name: "Rich Candy Cherry",
-      image:
-        "https://s3.ap-south-1.amazonaws.com/fraazo-prod/images/images/000/007/492/original/data?1652237337",
-      weight: "200g",
-      prize: 99,
-      old_prize: null,
-      category: "fruits",
-      sub_category: "exotic-fruits",
-      description: "Rich Candy Cherry",
-      benifit:
-        "- Cherries are high in antioxidants and provide a variety of health benefits, including vitamin C, potassium, fiber and other elements required for proper bodily function. - Cherries helps to improve athletic performance and reduce exercise-induced muscle damage and soreness. - It contains powerful heart-protective properties.",
-      info: "- Natural Fresh Cherry comes from a Himachal Pradesh farm. These cherries have a longer shelf life, lasting up to 6 days from 2-3 days. - Sweet, sour, and duke cherries are among the many sorts of cherry available. - The fresh cherry crop was harvested in the first week of May and will continue until the end of June. - Cherry are popular from Himachal Pradesh, in northern India, as a viable alternative to apple trees.",
-      tag: "best",
-      cart: 2,
-      createdAt: "2022-05-22T20:16:34.724Z",
-      updatedAt: "2022-05-22T20:16:34.724Z",
-    },
-  ]);
-  
+  const cartItems = useSelector((store) => store.cart.cartItems);
+
+  const dispatch = useDispatch();
+
   const toggleDrawer = (open) => (event) => {
     if (
       event.type === "keydown" &&
@@ -57,7 +23,6 @@ export default function Cart({ openCart, setOpenCart }) {
   };
 
   const [cartTotal, setCartTotal] = useState(0);
- 
 
   useEffect(() => {
     let res = 0;
@@ -67,16 +32,10 @@ export default function Cart({ openCart, setOpenCart }) {
     setCartTotal(res);
   }, [cartItems]);
 
-
-
   const list = () => (
-    <Box
-      sx={{ width: 450}}
-      role="presentation"  
-      className="cart_container"
-    >
+    <Box sx={{ width: 450 }} role="presentation" className="cart_container">
       <div className="cart_container_head">
-        <h2>My Cart ({1} items)</h2>
+        <h2>My Cart ({cartItems.length} items)</h2>
         <Button onClick={toggleDrawer(false)}>X</Button>
       </div>
       <div className="cart_continer_body">
@@ -97,9 +56,19 @@ export default function Cart({ openCart, setOpenCart }) {
               <div className="cart_prod_remove_add">
                 <div className="cart_prod_remove">Remove</div>
                 <div className="cart_prod_add_reduce">
-                  <div className="cart_prod_reduce">-</div>
+                  <div
+                    className="cart_prod_reduce"
+                    onClick={() => dispatch(descCartProd(ele))}
+                  >
+                    -
+                  </div>
                   {ele.cart}
-                  <div className="cart_prod_add">+</div>
+                  <div
+                    className="cart_prod_add"
+                    onClick={() => dispatch(incCartProd(ele))}
+                  >
+                    +
+                  </div>
                 </div>
               </div>
             </div>
