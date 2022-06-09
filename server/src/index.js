@@ -52,12 +52,13 @@ app.post(
     .not()
     .isEmpty()
     .withMessage("Password is required")
-    .custom((value, { req }) => {
-      if (value !== req.body.confirmPassword) {
-        throw new Error("Password and confirm password should match");
-      }
-      return true;
-    }),
+    // .custom((value, { req }) => {
+    //   if (value !== req.body.confirmPassword) {
+    //     throw new Error("Password and confirm password should match");
+    //   }
+    //   return true;
+  // })
+  ,
   body("phone").custom((value) => {
     if (value && value.length != 10) {
       throw new Error("phone number should have 10 digits");

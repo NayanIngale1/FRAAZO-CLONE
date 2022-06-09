@@ -7,9 +7,11 @@ import { IoIosWallet } from "react-icons/io";
 import { HiShoppingCart } from "react-icons/hi";
 import { FaSearch } from "react-icons/fa";
 import Cart from "../Cart/Cart";
+import Login from "../Login/Login";
 
 const Navbar = () => {
   const [openCart, setOpenCart] = useState(false);
+  const [openLogin, setOpenLogin] = React.useState(false);
   return (
     <div className="navbar_wrapper">
       <div className="navbar_logo">
@@ -36,11 +38,12 @@ const Navbar = () => {
         <IoIosWallet className="navbar_icon" />
         Credit
       </div>
-      <div className="navbar_login">
+      <div className="navbar_login" onClick={() => setOpenLogin(true)}>
         <MdPerson className="navbar_icon" />
         Login
       </div>
       <Cart openCart={openCart} setOpenCart={setOpenCart} />
+      <Login open={openLogin} setOpen={setOpenLogin} />
     </div>
   );
 };

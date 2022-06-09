@@ -62,6 +62,7 @@ const login = async (req, res) => {
 
     //finding user
     const user = await User.findOne({ email: req.body.email });
+    // console.log('user:', user)
 
     //if user does not exists then
     if (!user) {
