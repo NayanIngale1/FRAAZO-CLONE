@@ -6,6 +6,12 @@ export const LOGIN_ERROR = "LOGIN_ERROR";
 
 export const ADD_USER_DATA = "ADD_USER_DATA";
 
+export const ADD_USER_TOKEN = "ADD_TOKEN";
+
+export const REMOVE_TOKEN = "REMOVE_TOKEN";
+
+export const SET_LOGGEDIN = "SET_LOGGEDIN";
+
 //action creator
 
 export const setLoginLoading = (payload) => {
@@ -25,6 +31,24 @@ export const setLoginError = (payload) => {
 export const setUserData = (payload) => {
   return {
     type: ADD_USER_DATA,
+    payload: payload,
+  };
+};
+
+export const addUserData = (payload) => {
+  return {
+    type: ADD_USER_TOKEN,
+    payload: payload,
+  };
+};
+
+export const removeTokem = () => {
+  return { type: REMOVE_TOKEN };
+};
+
+export const setLoggedIn = (payload) => {
+  return {
+    type: SET_LOGGEDIN,
     payload: payload,
   };
 };

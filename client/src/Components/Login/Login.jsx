@@ -3,6 +3,13 @@ import { Box, TextField } from "@mui/material";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
+import { useDispatch } from "react-redux";
+import {
+  setLoginLoading,
+  setLoginError,
+  addUserData,
+  setLoggedIn,
+} from "../../Redux/user/action";
 
 const style = {
   position: "absolute",
@@ -29,9 +36,9 @@ export default function Login({ open, setOpen }) {
     password: "",
     phone: "",
   });
-  // console.log("userData:", userData);
+
   const [loginData, setLoginData] = useState({ email: "", password: "" });
-  // console.log("loginData:", loginData);
+
   const [signupForm, showSignupForm] = useState(false);
 
   const handleLoginForm = (e) => {
@@ -41,26 +48,38 @@ export default function Login({ open, setOpen }) {
     });
   };
 
+  const dispatch = useDispatch();
+
   const handleLogin = (loginData) => {
-    console.log("loginData:", loginData);
-    fetch(
-      "http://localhost:4040/login",
-      // "https://fraazo-clone.herokuapp.com/login",
-      {
-        method: "POST",
-        body: JSON.stringify(loginData),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    )
+    fetch("https://fraazo-clone.herokuapp.com/login", {
+      method: "POST",
+      body: JSON.stringify(loginData),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
       .then((res) => res.json())
-      .then((res) => console.log(res))
+      .then((res) => {
+        console.log("res:", res);
+        if (res.errors) {
+          let error = res.errors[0];
+          console.log("error:", error);
+          alert(error.msg);
+        } else if (res.message !== "Login Successful") {
+          alert(res.message);
+        } else {
+          alert(res.message);
+
+          dispatch(setLoginLoading(true));
+          dispatch(addUserData(res));
+          dispatch(setLoggedIn(true));
+          handleClose();
+        }
+      })
       .catch((err) => console.log(err));
   };
   const handleSignup = (userData) => {
-    console.log("userData:", userData);
-    fetch("http://localhost:4040/register", {
+    fetch("https://fraazo-clone.herokuapp.com/register", {
       method: "POST",
       body: JSON.stringify(userData),
       headers: {
@@ -68,7 +87,18 @@ export default function Login({ open, setOpen }) {
       },
     })
       .then((res) => res.json())
-      .then((res) => console.log(res))
+      .then((res) => {
+        if (res.errors) {
+          let error = res.errors[0];
+          console.log("error:", error);
+          alert(error.msg);
+        } else if (res.message !== "User created successfully") {
+          alert(res.message);
+        } else {
+          alert(res.message + "\n Now Login....!");
+          showSignupForm(!signupForm);
+        }
+      })
       .catch((err) => console.log(err));
   };
 
@@ -102,6 +132,7 @@ export default function Login({ open, setOpen }) {
                 variant="standard"
                 color="success"
                 name="email"
+                type="email"
                 value={loginData.email}
                 onChange={handleLoginForm}
                 sx={{ mt: 4, width: "100%" }}
@@ -145,7 +176,8 @@ export default function Login({ open, setOpen }) {
                 id="standard-size-normal"
                 variant="standard"
                 color="success"
-                name="email"
+                  name="email"
+                  type="email"
                 value={userData.email}
                 onChange={handleUserData}
                 sx={{ mt: 3, width: "100%" }}

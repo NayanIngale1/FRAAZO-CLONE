@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const {
   register,
@@ -8,7 +9,6 @@ const User = require("./models/user.model");
 const { body, validationResult } = require("express-validator");
 var cors = require("cors");
 const app = express();
-require("dotenv").config();
 const jwt = require("jsonwebtoken");
 
 // const passport = require("./configs/googleOauth");

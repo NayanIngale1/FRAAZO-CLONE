@@ -1,10 +1,10 @@
+require("dotenv").config();
 const User = require("../models/user.model");
 
 const { body, validationResult } = require("express-validator");
 
 const jwt = require("jsonwebtoken");
 
-require("dotenv").config();
 
 // function for generating new token
 

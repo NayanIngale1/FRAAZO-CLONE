@@ -8,10 +8,14 @@ import { HiShoppingCart } from "react-icons/hi";
 import { FaSearch } from "react-icons/fa";
 import Cart from "../Cart/Cart";
 import Login from "../Login/Login";
+import { useSelector, useDispatch } from "react-redux";
 
 const Navbar = () => {
   const [openCart, setOpenCart] = useState(false);
   const [openLogin, setOpenLogin] = React.useState(false);
+
+  const userData = useSelector((state) => state.user);
+  const user = userData.user;
   return (
     <div className="navbar_wrapper">
       <div className="navbar_logo">
@@ -38,10 +42,17 @@ const Navbar = () => {
         <IoIosWallet className="navbar_icon" />
         Credit
       </div>
-      <div className="navbar_login" onClick={() => setOpenLogin(true)}>
-        <MdPerson className="navbar_icon" />
-        Login
-      </div>
+      {userData.isLoggedIn ? (
+        <div className="navbar_login" >
+          <MdPerson className="navbar_icon" />
+          {user.firstName}
+        </div>
+      ) : (
+        <div className="navbar_login" onClick={() => setOpenLogin(true)}>
+          <MdPerson className="navbar_icon" />
+          Login
+        </div>
+      )}
       <Cart openCart={openCart} setOpenCart={setOpenCart} />
       <Login open={openLogin} setOpen={setOpenLogin} />
     </div>
