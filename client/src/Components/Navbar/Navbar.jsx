@@ -1,21 +1,26 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import navbarLogo from "../../Images/fraazo-logo.svg";
-import { MdLocationOn, MdPerson } from "react-icons/md";
+import { MdLocationOn, MdPerson, MdLogout } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { IoIosWallet } from "react-icons/io";
 import { HiShoppingCart } from "react-icons/hi";
 import { FaSearch } from "react-icons/fa";
 import Cart from "../Cart/Cart";
 import Login from "../Login/Login";
+import {removeToken} from "../../Redux/user/action";
 import { useSelector, useDispatch } from "react-redux";
 
 const Navbar = () => {
   const [openCart, setOpenCart] = useState(false);
   const [openLogin, setOpenLogin] = React.useState(false);
+  const [openLogout, setOpenLogout] = useState(false);
 
   const userData = useSelector((state) => state.user);
   const user = userData.user;
+
+  const dispatch = useDispatch();
+
   return (
     <div className="navbar_wrapper">
       <div className="navbar_logo">
@@ -43,9 +48,21 @@ const Navbar = () => {
         Credit
       </div>
       {userData.isLoggedIn ? (
-        <div className="navbar_login" >
-          <MdPerson className="navbar_icon" />
-          {user.firstName}
+        <div className="navbar_logoutWrapper">
+          <div
+            className="navbar_login"
+            onClick={() => setOpenLogout(!openLogout)}
+          >
+            <MdPerson className="navbar_icon" />
+            {/* {user.firstName} */}
+            Nayan
+          </div>
+          {openLogout && (
+            <div className="navbar_logout" onClick={()=>dispatch(removeToken())}>
+              <MdLogout className="navbar_icon" />
+              <div className="navbar_logout_btn">Logout</div>
+            </div>
+          )}
         </div>
       ) : (
         <div className="navbar_login" onClick={() => setOpenLogin(true)}>

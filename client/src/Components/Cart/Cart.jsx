@@ -3,6 +3,7 @@ import "./Cart.css";
 import Box from "@mui/material/Box";
 import { Drawer, Button } from "@mui/material";
 import { BiRupee } from "react-icons/bi";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { descCartProd, incCartProd } from "../../Redux/cart/action";
 
@@ -10,7 +11,7 @@ export default function Cart({ openCart, setOpenCart }) {
   const cartItems = useSelector((store) => store.cart.cartItems);
 
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
   const toggleDrawer = (open) => (event) => {
     if (
       event.type === "keydown" &&
@@ -84,7 +85,12 @@ export default function Cart({ openCart, setOpenCart }) {
           </div>
         </div>
         <div className="cart_container_footer_total">
-          <button className="cart_footer_checkout_btn">CHECKOUT</button>
+          <button
+            className="cart_footer_checkout_btn"
+            onClick={()=>navigate("/checkout")}
+          >
+            CHECKOUT
+          </button>
         </div>
       </div>
     </Box>

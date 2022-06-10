@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+const stripe = require("stripe")("sk_test_51L97nDSJamWgxW3Fu5ttWzME3WdHNf87wOhrI1VjW8hTAcxU9Ik8E5OsQpFhzuuDOcBxDL5fWjNwvaFEgut0EMKd00UPm1xq20")
 const {
   register,
   login,
@@ -83,6 +84,24 @@ app.post(
   body("password").not().isEmpty().withMessage("Password is required"),
   login
 );
+
+// API for PAYMENT
+
+app.post("/payment/create", async (req, res) => {
+  const total = req.body.amount;
+  console.log("Payment Request recieved for this ruppess", total);
+
+ 
+const paymentIntent = await stripe.paymentIntents.create({
+  amount: total,
+  currency: 'inr',
+  payment_method_types: ['card'],
+});
+
+  console.log(paymentIntent)
+
+  res.status(201).send({clientSecret: paymentIntent.client_secret});
+});
 
 
 // app.get(

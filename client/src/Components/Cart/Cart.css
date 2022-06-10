@@ -1,5 +1,7 @@
 .cart_container {
   max-width: 100vh;
+  position: relative;
+  z-index:9999;
 }
 
 .cart_container_head {
@@ -9,6 +11,7 @@
 }
 .cart_continer_body {
   min-height: 80vh;
+  height:80vh;
   padding: 0px 20px 10px 20px;
   overflow-y: auto;
 }

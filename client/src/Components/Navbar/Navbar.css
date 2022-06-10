@@ -8,6 +8,9 @@
   /* border: 1px solid red; */
   color: #999;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  position:fixed;
+  top:0;
+  z-index:99;
 }
 .navbar_logo {
   /* border: 1px solid red; */
@@ -44,7 +47,7 @@
 }
 .navbar_cart,
 .navbar_credit,
-.navbar_login,
+.navbar_login,.navbar_logout ,
 .navbar_location_wrapper {
   display: flex;
   align-items: center;
@@ -53,7 +56,18 @@
 }
 .navbar_cart:hover,
 .navbar_credit:hover,
-.navbar_login:hover,
+.navbar_login:hover,.navbar_logout :hover,
 .navbar_location_wrapper :hover {
   color: #000;
+}
+.navbar_logoutWrapper {
+  position: relative;
+}
+.navbar_logout {
+  position: absolute;
+  bottom: -60px;
+  border: 1px solid #bfbfbf;
+  padding:10px 20px;
+  background:white;  
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }

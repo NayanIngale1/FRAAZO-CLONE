@@ -3,6 +3,7 @@ import {
   CART_LOADING,
   DESC_CART_PROD,
   INC_CART_PROD,
+  EMPTY_CART
 } from "./action";
 
 const initial = {
@@ -32,6 +33,9 @@ export const cartReducer = (state = initial, { type, payload }) => {
     case INC_CART_PROD:
       let data = state.cartItems.map((el) => {
         if (el._id === payload._id) {
+          if(el.cart===5){
+            return el;
+          }
           el.cart = el.cart + 1;
           return el;
         } else {
@@ -50,6 +54,7 @@ export const cartReducer = (state = initial, { type, payload }) => {
       });
       data = new_data.filter((el) => el.cart !== 0);
       return { ...state, cartItems: data };
+      case EMPTY_CART:return {...state,cartItems:[]}
     default:
       return state;
   }

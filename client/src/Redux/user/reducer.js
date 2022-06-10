@@ -25,7 +25,7 @@ export const userReducer = (state = initial, { type, payload }) => {
     case ADD_USER_TOKEN:
       return { ...state, token: payload.token,user:payload.user };
     case REMOVE_TOKEN:
-      return { ...state, token: "" };
+      return { ...state, isLoggedIn: false, token: "", user: {} };
     case SET_LOGGEDIN:
       return { ...state, loading: false, isLoggedIn: payload };
     default:

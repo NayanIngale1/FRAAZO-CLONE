@@ -42,7 +42,7 @@ export const addUserData = (payload) => {
   };
 };
 
-export const removeTokem = () => {
+export const removeToken = () => {
   return { type: REMOVE_TOKEN };
 };
 
