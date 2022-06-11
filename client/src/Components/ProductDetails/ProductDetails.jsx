@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./ProductDetails.css";
 import { FaCartPlus } from "react-icons/fa";
 import { BiRupee } from "react-icons/bi";
-import { useParams } from "react-router-dom";
+import { useParams,Link } from "react-router-dom";
 import BestDeals from "../Home/BestDeals/BestDeals";
 import AddToCartBtn from "../AddToCart Button/AddToCartBtn";
 
@@ -25,7 +25,7 @@ const ProductDetails = () => {
     <div className="app_container">
       <div className="product_details_page">
         <div className="path_to_product">
-          Home/{product.category}/{product.sub_category}/<b>{product.name}</b>
+          Home/{product.category}/<Link to={`/products/category/${product.sub_category}`} className="linkTag">{product.sub_category}</Link>/<b>{product.name}</b>
         </div>
         <div className="product_details_infoDiv">
           <div className="product_details_imgDiv">

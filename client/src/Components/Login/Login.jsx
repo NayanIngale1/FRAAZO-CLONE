@@ -10,6 +10,8 @@ import {
   addUserData,
   setLoggedIn,
 } from "../../Redux/user/action";
+import { toast } from "react-toastify";
+
 
 const style = {
   position: "absolute",
@@ -60,15 +62,15 @@ export default function Login({ open, setOpen }) {
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log("res:", res);
+        // console.log("res:", res);
         if (res.errors) {
           let error = res.errors[0];
-          console.log("error:", error);
-          alert(error.msg);
+          // console.log("error:", error);
+          toast.error(error.msg);
         } else if (res.message !== "Login Successful") {
-          alert(res.message);
+          toast.error(res.message);
         } else {
-          alert(res.message);
+          toast.success(res.message);
 
           dispatch(setLoginLoading(true));
           dispatch(addUserData(res));
@@ -90,12 +92,13 @@ export default function Login({ open, setOpen }) {
       .then((res) => {
         if (res.errors) {
           let error = res.errors[0];
-          console.log("error:", error);
-          alert(error.msg);
+          // console.log("error:", error);
+
+          toast.error(error.msg);
         } else if (res.message !== "User created successfully") {
-          alert(res.message);
+          toast.error(res.message);
         } else {
-          alert(res.message + "\n Now Login....!");
+          toast.success(res.message + "\n Now Login....!");
           showSignupForm(!signupForm);
         }
       })

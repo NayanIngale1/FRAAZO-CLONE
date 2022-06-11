@@ -88,14 +88,14 @@ app.post(
 // API for PAYMENT
 
 app.post("/payment/create", async (req, res) => {
-  const total = req.body.amount;
-  console.log("Payment Request recieved for this ruppess", total);
+  let total = req.body.amount;
+  console.log("Payment Request recieved for this ruppess", total,typeof(total));
 
- 
+  total = Number(total);
 const paymentIntent = await stripe.paymentIntents.create({
-  amount: total,
-  currency: 'inr',
-  payment_method_types: ['card'],
+  amount: 100,
+  currency: "inr",
+  payment_method_types: ["card"],
 });
 
   console.log(paymentIntent)

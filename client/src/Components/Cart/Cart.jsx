@@ -87,7 +87,11 @@ export default function Cart({ openCart, setOpenCart }) {
         <div className="cart_container_footer_total">
           <button
             className="cart_footer_checkout_btn"
-            onClick={()=>navigate("/checkout")}
+            onClick={() => { 
+              setOpenCart(false);
+              navigate("/checkout");
+              
+            }}
           >
             CHECKOUT
           </button>

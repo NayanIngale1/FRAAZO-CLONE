@@ -12,7 +12,6 @@ export const productReducer = (state = initial, { type, payload }) => {
     case PROD_ERROR:
       return { ...state, loading: false, error: payload };
     case ADD_ALL_PRODUCTS:
-      console.log("payload", payload);
       return { ...state, loading: false, error: false, data: payload };
     default:
       return state;

@@ -54,8 +54,7 @@ const Navbar = () => {
             onClick={() => setOpenLogout(!openLogout)}
           >
             <MdPerson className="navbar_icon" />
-            {/* {user.firstName} */}
-            Nayan
+            {user.firstName}
           </div>
           {openLogout && (
             <div className="navbar_logout" onClick={()=>dispatch(removeToken())}>

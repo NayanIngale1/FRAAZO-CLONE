@@ -11,8 +11,9 @@ import { PaymentElement } from "@stripe/react-stripe-js";
 import React, { useState, useEffect } from "react";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 import { emptyCart } from "../../Redux/cart/action";
+import { toast } from "react-toastify";
 
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
@@ -29,6 +30,18 @@ function CheckOutStripe() {
       
   const stripe = useStripe();
   const elements = useElements();
+ const cartItems = useSelector((state) => state.cart.cartItems);
+
+ const cartTotal = cartItems.reduce((acc, el) => {
+   return acc + el.cart * el.prize;
+ }, 0);
+
+  const cartAferDisc = cartTotal - (cartTotal / 100) * 5;
+
+  const toPay = cartAferDisc + 30;
+
+  const notify = () => toast.success(`Payment Successfull..! \nThank You..!`);
+  
 
   const handleSubmit = async (event) => {
     // We don't want to let default form submission happen here,
@@ -41,12 +54,12 @@ function CheckOutStripe() {
       return;
     }
 
-    var response = fetch("http://localhost:4040/payment/create", {
+    var response = fetch("https://fraazo-clone.herokuapp.com/payment/create", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify({ amount: 10000 }),
+      body: JSON.stringify({ amount: toPay }),
     })
       .then(function (response) {
         return response.json();
@@ -62,13 +75,11 @@ function CheckOutStripe() {
             },
           })
           .then(() => {
-            alert(`Payment Successfull..! \nThank You..!`);
+            notify();
             dispatch(emptyCart());
-            navigate("/");
+            setTimeout(() => { navigate("/") },2000)
           })
           .catch((err) => console.warn(err));
-        
-        
       });
 
    
@@ -90,6 +101,7 @@ function CheckOutStripe() {
           Submit
         </Button>
       </form>
+     
     </div>
   );
 }
