@@ -1,16 +1,16 @@
-# Fraazo-Clone ( Individual Project )
+# **Fraazo-Clone ( Individual Project )**
 
-Hello readers most of you would be knowing about fraazo.com, and for those who don’t know Fraazo, Fraazo follows a farm-to-fork model where it owns the entire back-end supply chain starting with farmers, and delivers them fresh to customers.
+Hello readers most of you would be knowing about <u>[Fraazo.com](https://fraazo.com)</u> , and for those who don’t know Fraazo, Fraazo follows a farm-to-fork model where it owns the entire back-end supply chain starting with farmers, and delivers them fresh to customers.
 <br/>
 <br/>
 
-### Deployed Link : https://fraazo-clone-ningale.vercel.app/
-### Backend API Link : https://fraazo-clone.herokuapp.com/
-### API endpoints : [Backend API endpoints & their usage](https://github.com/NayanIngale1/FRAAZO-CLONE/blob/main/server/Readme.md) 
+### **Deployed Link** : https://fraazo-clone-ningale.vercel.app/
+### **Backend API Link** : https://fraazo-clone.herokuapp.com/
+### **API endpoints** : [Backend API endpoints & their usage](https://github.com/NayanIngale1/FRAAZO-CLONE/blob/main/server/Readme.md) 
 
 <br/>
 
-## Initiating the project
+## **Initiating the project**
 One day I visit the fraazo site and I saw their good looking UI and Some functionalities. So after some time I started building my fraazo-clone. I completed this project individually as a side project. First I completed backend part and then I worked on front-end part.
 
 
@@ -32,7 +32,7 @@ One day I visit the fraazo site and I saw their good looking UI and Some functio
     - redux
     - redux-thunk 
 
-### backend Side :
+### Backend Side :
     - bcrypt
     - bcryptjs
     - cookie-parser
@@ -47,4 +47,51 @@ One day I visit the fraazo site and I saw their good looking UI and Some functio
     - stripe
     - uuid
 
-### Some Scrreshots of project : 
+## Some Scrreshots of project : 
+
+
+- ### Landing Page :
+  ![alt text](/Demo/Home.png)
+
+<hr/>
+
+- ### Login Page :
+  ![alt text](/Demo/loginPopup.png)
+
+<hr/>
+
+
+- ### Category Best products Slider :
+  ![alt text](/Demo/CategoryBestSlider.png)
+
+<hr/>
+
+- ### Categories Page :
+  ![alt text](/Demo/categories.png)
+
+<hr/>
+
+- ### CartItems Side bar :
+  ![alt text](/Demo/cartItems.png)
+
+
+<hr/>
+
+- ### Products Listing Page :
+  ![alt text](/Demo/cart&CheckOut.png)
+
+
+<hr/>
+
+
+- ### Footer Part :
+  ![alt text](/Demo/footerpart.png)
+
+<hr/>
+
+
+- ### Responsive Design :
+  ![alt text](/Demo/responsive.png)
+
+
+<h1>Thank you for visiting...!</h1>
