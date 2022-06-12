@@ -10,6 +10,9 @@ Hello readers most of you would be knowing about <u>[Fraazo.com](https://fraazo.
 
 <br/>
 
+## _**If you like the application then give a star as a feedback..**_
+
+<br/>
 ## **Initiating the project**
 One day I visit the fraazo site and I saw their good looking UI and Some functionalities. So after some time I started building my fraazo-clone. I completed this project individually as a side project. First I completed backend part and then I worked on front-end part.
 
