@@ -26,7 +26,6 @@ function PrivateRoute({isLogin,children}) {
 
 }
 
-
 function App() {
 
   const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
