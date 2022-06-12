@@ -143,7 +143,7 @@ const paymentIntent = await stripe.paymentIntents.create({
 
 app.use("/", (req, res) => {
   res.send(
-    `<h1 style="color:#C7AA8D;font-size:46px;margin:20px auto;">Welcome to Fraazo-Clone API</h1>`
+    `<h1 style="color:#C7AA8D;font-size:46px;margin:20px auto;">Welcome to Fraazo-Clone API</h1><br/> <a href="https://github.com/NayanIngale1/FRAAZO-CLONE/blob/main/server/Readme.md">Go to the Documentation.</a>`
   );
 });
 
