@@ -77,7 +77,7 @@ function CheckOutStripe() {
           .then(() => {
             notify();
             dispatch(emptyCart());
-            setTimeout(() => { navigate("/") },2000)
+            navigate("/") 
           })
           .catch((err) => console.warn(err));
       });
