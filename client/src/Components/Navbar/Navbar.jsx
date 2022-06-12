@@ -16,6 +16,9 @@ const Navbar = () => {
   const [openLogin, setOpenLogin] = React.useState(false);
   const [openLogout, setOpenLogout] = useState(false);
 
+
+
+   const cartItems = useSelector((state) => state.cart.cartItems);
   const userData = useSelector((state) => state.user);
   const user = userData.user;
 
@@ -42,6 +45,7 @@ const Navbar = () => {
       <div className="navbar_cart" onClick={() => setOpenCart(true)}>
         <HiShoppingCart className="navbar_icon" />
         Cart
+        <div className="cart_item_count">{cartItems.length}</div>
       </div>
       <div className="navbar_credit">
         <IoIosWallet className="navbar_icon" />

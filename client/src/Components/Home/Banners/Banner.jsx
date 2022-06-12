@@ -13,8 +13,12 @@ import banner6 from "../../../Images/banner6.png";
 import banner7 from "../../../Images/banner7.png";
 import banner8 from "../../../Images/banner8.png";
 import banner9 from "../../../Images/banner9.png";
+import banner10 from "../../../Images/banner10.png";
+import banner11 from "../../../Images/banner11.png";
+import banner12 from "../../../Images/banner12.png";
 
 const bannerImgs = [
+  banner10,banner11,banner12,
   banner1,
   banner2,
   banner3,

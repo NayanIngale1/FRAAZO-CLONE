@@ -39,3 +39,17 @@
 .home_banner_advertisement3 {
   width: 100%;
 }
+
+/* ---------------------media quiries -----------*/
+@media (max-width: 768px) {
+ 
+}
+@media (max-width: 499px) {
+ .home_banner{
+  flex-direction: column;
+ }
+ .home_banner_right,.home_baner_mainSlider{
+  width:100%;
+  margin-top:10px;
+ }
+}

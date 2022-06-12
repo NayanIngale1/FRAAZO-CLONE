@@ -101,3 +101,29 @@
   cursor: pointer;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
+.cart_list_display{
+  width:450px;
+}
+.cart_container_empty{
+  width:250px;
+  display:flex;
+  margin:20px auto;
+  flex-direction:column;
+  gap:15px;
+  justify-content:center;
+  align-items:center;
+}
+.cart_container_empty img{
+  width:100%;
+}
+
+
+
+@media (max-width: 499px) {
+  .product_details_infoDiv{
+    flex-direction:column;
+  }
+  .cart_list_display{
+    width:300px;
+  }
+}

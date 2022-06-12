@@ -100,3 +100,21 @@
   padding:10px ;
   border-radius:10px;
 }
+
+
+
+
+/* ---------------------media quiries -----------*/
+@media (max-width: 768px) {
+ 
+}
+@media (max-width: 499px) {
+ .checkout_main_container{
+  flex-direction :column;  
+  flex-direction:column-reverse;
+ }
+ .checkout_stepper_details,
+.checkout_Cart_billing{
+  width:100%;
+}
+}

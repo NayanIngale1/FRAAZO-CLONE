@@ -2,6 +2,8 @@
 
 export const ADD_TO_CART = "ADD_TO_CART";
 
+export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
+
 export const INC_CART_PROD = "INC_CART_PROD";
 
 export const DESC_CART_PROD = "DESC_CART_PROD";
@@ -18,6 +20,13 @@ export const addToCart = (payload) => {
     payload: { ...payload, cart: 1 },
   };
 };
+
+export const removeFromCart = (payload) => {
+  return {
+    type: REMOVE_FROM_CART,
+    payload:payload
+  }
+}
 
 export const incCartProd = (payload) => {
   return {
@@ -45,3 +54,4 @@ export const emptyCart = () => {
     type: EMPTY_CART,
   }
 }
+

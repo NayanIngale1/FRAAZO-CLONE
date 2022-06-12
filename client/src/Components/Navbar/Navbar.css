@@ -71,3 +71,33 @@
   background:white;  
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+.navbar_cart{
+  position :relative;
+}
+.cart_item_count{
+  position :absolute;
+  top:-12px;
+  left:10px;
+  font-size:12px;
+  font-weight:bold;
+  background:rgb(0, 162, 0);
+  color:white;
+  padding:2px 6px;
+  border-radius:50%;
+
+}
+
+@media (max-width: 499px) {
+ .navbar_search_bar,.navbar_credit {
+  display: none;
+ }
+ .navbar_logo {
+  width:30%;
+ }
+ .navbar_wrapper{
+  padding:15px;
+ }
+ .navbar_icon {
+  font-size: 20px;
+}
+}

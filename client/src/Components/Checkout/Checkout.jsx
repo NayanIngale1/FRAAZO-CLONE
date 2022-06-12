@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
 import "./Checkout.css";
 import Box from "@mui/material/Box";
 import Stepper from "@mui/material/Stepper";
@@ -17,8 +17,11 @@ import { useSelector } from "react-redux";
 const steps = [1, 2, 3];
 
 export default function HorizontalLinearStepper() {
-  const [activeStep, setActiveStep] = React.useState(0);
-  const [skipped, setSkipped] = React.useState(new Set());
+
+
+  useEffect(() => { window.scrollTo(0, 0);},[])
+  const [activeStep, setActiveStep] = useState(0);
+  const [skipped, setSkipped] = useState(new Set());
 
   const isStepSkipped = (step) => {
     return skipped.has(step);

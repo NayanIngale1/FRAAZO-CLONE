@@ -29,6 +29,7 @@
   width: fit-content;
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
   align-items: center;
   border: 1px solid #f0f0f0;
   border-radius: 30px;
@@ -48,7 +49,7 @@
   padding: 20px;
   gap: 10px;
   align-items: center;
-  border: 1px solid #f0f0f0;
+  border: 1px solid #bfbfbf;
   border-radius: 10px;
   font-size: 20px;
 }
@@ -56,6 +57,7 @@
   border: 0;
   outline: none;
   font-size: 20px;
+  background:none;
   padding: 0px 10px;
   border-left: 1px solid lightgray;
 }
@@ -81,4 +83,32 @@
   align-items: center;
   gap: 15px;
   font-size: 20px;
+  flex-wrap: wrap;
+}
+
+
+/* ---------------------media quiries -----------*/
+@media (max-width: 768px) {
+ 
+}
+@media (max-width: 499px) {
+ .download_app_section{
+  flex-direction:column;  
+ }
+ .download_app_mobiles {
+  width:200px;
+ }
+ .mobiles_img{
+  width:100%;
+ }
+ .download_app_infoDiv {
+  padding: 20px;
+}
+.download_submit_button,.download_input_mobile{
+  width:350px;
+}
+.download_app_infoDiv{
+  max-width:100%
+}
+
 }

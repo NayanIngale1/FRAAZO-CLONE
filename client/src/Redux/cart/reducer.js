@@ -3,7 +3,8 @@ import {
   CART_LOADING,
   DESC_CART_PROD,
   INC_CART_PROD,
-  EMPTY_CART
+  EMPTY_CART,
+  REMOVE_FROM_CART
 } from "./action";
 
 const initial = {
@@ -30,6 +31,7 @@ export const cartReducer = (state = initial, { type, payload }) => {
         return { ...state, cartItems: arr };
       }
       return { ...state, cartItems: [...state.cartItems, payload] };
+      case REMOVE_FROM_CART :return {...state,cartItems:state.cartItems.filter(el=>el._id!=payload._id)}
     case INC_CART_PROD:
       let data = state.cartItems.map((el) => {
         if (el._id === payload._id) {

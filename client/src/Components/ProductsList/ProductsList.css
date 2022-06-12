@@ -93,3 +93,12 @@
   grid-gap: 15px;
   /* border: 1px solid black; */
 }
+
+
+
+@media (max-width: 499px) {
+.products_listing_acordion {
+  width: 33%;
+}
+}
+  

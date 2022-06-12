@@ -15,7 +15,7 @@
 }
 .footer_info_wrapper {
   position: absolute;
-  top: 160px;
+  top:8rem;
   background: #165241;
   color: #bfbfbf;
   margin: 0;
@@ -42,6 +42,7 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+  margin-top:15px;
 }
 .footer_connect_us_method {
   display: flex;
@@ -66,4 +67,20 @@
 .footer_copyright_info {
   text-align: center;
   padding: 15px 0px;
+}
+
+@media (max-width: 1100px) {
+    .footer_info_wrapper {
+    top:5rem;
+  }
+}
+@media (max-width: 768px) {
+    .footer_info_wrapper {
+    top:4rem;
+  }
+}
+@media (max-width: 499px) {
+  .footer_info_wrapper {
+    top:2rem;
+  }
 }

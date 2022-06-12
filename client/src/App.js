@@ -34,6 +34,10 @@ function App() {
 
   return (
     <div className="App">
+
+
+      div.welc
+
       <Navbar />
 
       <div className="app_container_margin">
