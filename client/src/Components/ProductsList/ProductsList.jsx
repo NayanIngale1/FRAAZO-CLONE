@@ -2,9 +2,17 @@ import React, { useEffect, useState } from "react";
 import "./ProductsList.css";
 import { useParams, Link } from "react-router-dom";
 import ProductCard from "../ProductCard/ProductCard";
+import { getProducts } from "../../Redux/products/action";
 import { useDispatch, useSelector } from "react-redux";
 
 const ProductsList = () => {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getProducts());
+  }, []);
+
   const { subcategory } = useParams();
 
   const data = useSelector((state) => state.product.data);
@@ -17,8 +25,7 @@ const ProductsList = () => {
   const [openDryFruits, setOpenDryFruits] = useState(false);
   const [openKitchenStaples, setOpenKitchenStaples] = useState(false);
 
-  const dispatch = useDispatch();
- 
+  
   useEffect(() => {
     fiterCategory();
     window.scroll(0, 0);
